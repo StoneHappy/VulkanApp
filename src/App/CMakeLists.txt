@@ -37,3 +37,5 @@ target_include_directories(
 # COMMAND ${CMAKE_COMMAND} -E remove_directory "${BINARY_ROOT_DIR}/${ENGINE_ASSET_DIR}"
 # COMMAND ${CMAKE_COMMAND} -E copy_directory "${ENGINE_ROOT_DIR}/${ENGINE_ASSET_DIR}" "${BINARY_ROOT_DIR}/${ENGINE_ASSET_DIR}"
 # )
+
+COPYQTDLL(${TARGET_NAME} "Core;Gui;Widgets")

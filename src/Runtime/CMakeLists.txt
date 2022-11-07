@@ -16,6 +16,10 @@ target_compile_options(${TARGET_NAME} PUBLIC "$<$<COMPILE_LANG_AND_ID:CXX,MSVC>:
 
 # Link dependencies    
 target_link_libraries(${TARGET_NAME} PUBLIC
+Qt5::Core
+Qt5::Gui
+Qt5::Widgets
+Vulkan::Vulkan
           )
 
 target_include_directories(

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
-project(AppName VERSION 0.1.0)
+project(VulkanQtApp VERSION 0.1.0)
 
 
 option(ENABLE_TEST "Enable google test" OFF)
@@ -8,9 +8,9 @@ option(ENABLE_DOCS "Enable doxygen docs" ON)
 
 
 # just for qt
-# set(CMAKE_AUTOUIC ON)
-# set(CMAKE_AUTOMOC ON)
-# set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -41,6 +41,16 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${${PROJECT_NAME}_ROOT_DIR}/out/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${${PROJECT_NAME}_ROOT_DIR}/out/bin)
 # vendors dir
 set(VENDORS_DIR ${CMAKE_SOURCE_DIR}/src/Vendors)
+
+
+find_package(Qt5 COMPONENTS                  # 查找 Qt5 的如下库
+        Core
+        Gui
+        Widgets
+        REQUIRED)
+
+
+find_package(Vulkan REQUIRED)
 
 
 add_subdirectory(src)
